@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alberto Rivera | Cybersecurity Expert</title>
+<meta name="description" content="Alberto Rivera — Cybersecurity Expert con +14 años de experiencia en seguridad cloud, multicloud y transformación digital. Santiago, Chile.">
+<meta name="author" content="Alberto Rivera">
+<meta property="og:title" content="Alberto Rivera | Cybersecurity Expert">
+<meta property="og:description" content="Protegiendo negocios y cuentas de ataques cibernéticos. +14 años en ciberseguridad, cloud security y liderazgo de equipos.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0e1a;--bg2:#111827;--bg3:#1a2035;
+  --green:#00C9A7;--green2:#00e6be;
+  --orange:#FF6B2B;--purple:#A55EEA;
+  --text:#e2e8f0;--text2:#94a3b8;--text3:#64748b;
+  --border:#1e293b;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{color:var(--green);text-decoration:none;transition:color .2s}
+a:hover{color:var(--green2)}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;backdrop-filter:blur(12px);background:rgba(10,14,26,.85);border-bottom:1px solid var(--border);padding:0 24px}
+nav .inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:60px}
+nav .logo{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px;color:var(--green)}
+nav .logo span{color:var(--text3)}
+nav ul{list-style:none;display:flex;gap:28px}
+nav ul li a{color:var(--text2);font-size:14px;font-weight:500;letter-spacing:.3px;transition:color .2s}
+nav ul li a:hover{color:var(--green)}
+.menu-toggle{display:none;background:none;border:none;color:var(--text);font-size:24px;cursor:pointer}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 24px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(0,201,167,.08),transparent 70%);pointer-events:none}
+.hero .inner{max-width:1100px;margin:0 auto;width:100%}
+.hero-label{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--green);letter-spacing:2px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.hero-label::before{content:'';width:32px;height:2px;background:var(--green)}
+.hero h1{font-size:clamp(36px,5.5vw,64px);font-weight:900;line-height:1.1;margin-bottom:20px}
+.hero h1 .accent{color:var(--green)}
+.hero .subtitle{font-size:clamp(16px,2vw,20px);color:var(--text2);max-width:640px;margin-bottom:32px;line-height:1.6}
+.hero-stats{display:flex;gap:40px;margin-bottom:36px;flex-wrap:wrap}
+.hero-stats .stat{text-align:center}
+.hero-stats .stat .num{font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:800;color:var(--green)}
+.hero-stats .stat .label{font-size:12px;color:var(--text3);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:8px;font-weight:600;font-size:14px;transition:all .25s;border:none;cursor:pointer}
+.btn-primary{background:var(--green);color:var(--bg)}
+.btn-primary:hover{background:var(--green2);color:var(--bg);transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,201,167,.25)}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn-outline:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px)}
+
+/* SECTIONS */
+section{padding:80px 24px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--green);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.section-label::before{content:'';width:24px;height:2px;background:var(--green)}
+.section-title{font-size:clamp(28px,4vw,40px);font-weight:800;margin-bottom:40px}
+
+/* ABOUT */
+#about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.about-text{color:var(--text2);font-size:15px;line-height:1.8}
+.about-text p{margin-bottom:16px}
+.about-highlights{display:grid;gap:16px}
+.highlight-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .3s}
+.highlight-card:hover{border-color:var(--green)}
+.highlight-card .icon{font-size:28px;margin-bottom:10px}
+.highlight-card h4{font-size:15px;font-weight:700;margin-bottom:6px}
+.highlight-card p{font-size:13px;color:var(--text3);line-height:1.5}
+
+/* EXPERIENCE */
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--border)}
+.timeline-item{position:relative;margin-bottom:36px}
+.timeline-item::before{content:'';position:absolute;left:-25px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--green)}
+.timeline-item.current::before{background:var(--green);box-shadow:0 0 12px rgba(0,201,167,.4)}
+.timeline-header{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.timeline-role{font-size:18px;font-weight:700}
+.timeline-company{font-size:15px;color:var(--green);font-weight:600}
+.timeline-period{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text3);letter-spacing:.5px}
+.timeline-desc{color:var(--text2);font-size:14px;line-height:1.7;margin-top:8px}
+.timeline-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 10px;border-radius:4px;background:rgba(0,201,167,.1);color:var(--green);border:1px solid rgba(0,201,167,.2)}
+
+/* SKILLS */
+#skills{background:var(--bg2)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.skill-group{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:24px}
+.skill-group h4{font-size:14px;font-weight:700;color:var(--green);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;font-family:'JetBrains Mono',monospace}
+.skill-list{display:flex;flex-wrap:wrap;gap:8px}
+.skill-item{font-size:13px;padding:6px 12px;border-radius:6px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text2);transition:all .2s}
+.skill-item:hover{border-color:var(--green);color:var(--green)}
+
+/* HIGHLIGHTS */
+.highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.highlight-big{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:28px;transition:all .3s}
+.highlight-big:hover{border-color:var(--green);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.highlight-big .badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 10px;border-radius:4px;margin-bottom:14px;letter-spacing:.5px}
+.highlight-big h3{font-size:18px;font-weight:700;margin-bottom:10px}
+.highlight-big p{font-size:14px;color:var(--text2);line-height:1.6}
+
+/* CONTACT */
+#contact{background:var(--bg2)}
+.contact-box{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:48px;text-align:center;max-width:640px;margin:0 auto}
+.contact-box h3{font-size:24px;font-weight:800;margin-bottom:12px}
+.contact-box p{color:var(--text2);margin-bottom:28px;font-size:15px}
+.contact-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.contact-link{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text);font-size:14px;font-weight:500;transition:all .2s}
+.contact-link:hover{border-color:var(--green);color:var(--green);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{padding:24px;text-align:center;color:var(--text3);font-size:12px;border-top:1px solid var(--border)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav ul{display:none;position:absolute;top:60px;left:0;width:100%;background:var(--bg);flex-direction:column;padding:20px;gap:16px;border-bottom:1px solid var(--border)}
+  nav ul.open{display:flex}
+  .menu-toggle{display:block}
+  .about-grid{grid-template-columns:1fr}
+  .hero-stats{gap:24px}
+  .hero-stats .stat .num{font-size:24px}
+  .timeline-header{flex-direction:column}
+  .contact-box{padding:28px 20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <div class="logo">AR<span>_sec</span></div>
+    <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('open')" aria-label="Menu">&#9776;</button>
+    <ul>
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#experience">Experiencia</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#highlights">Logros</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="inner">
+    <div class="hero-label">CYBERSECURITY EXPERT</div>
+    <h1>Alberto <span class="accent">Rivera</span></h1>
+    <p class="subtitle">Protegiendo infraestructuras críticas y aplicaciones cloud en entornos multicloud. Líder en transformación digital y seguridad ofensiva con IA.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">14+</div><div class="label">Años experiencia</div></div>
+      <div class="stat"><div class="num">4</div><div class="label">Clouds gestionados</div></div>
+      <div class="stat"><div class="num">1500+</div><div class="label">Servidores monitoreados</div></div>
+      <div class="stat"><div class="num">1er</div><div class="label">Lugar CTF 2026</div></div>
+    </div>
+    <div class="hero-btns">
+      <a href="https://www.linkedin.com/in/alriverarojas/" target="_blank" class="btn btn-primary">LinkedIn</a>
+      <a href="https://github.com/alrivera86" target="_blank" class="btn btn-outline">GitHub</a>
+      <a href="#contact" class="btn btn-outline">Contacto</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">Sobre mí</div>
+    <h2 class="section-title">Seguridad cloud, liderazgo y acción</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Soy un experto en ciberseguridad con más de 14 años de experiencia, especializado en liderar equipos y proyectos de transformación digital y seguridad en entornos cloud. Actualmente en el <strong>Banco de Chile</strong>, lidero la implementación de CNAPP (Prisma Cloud) y la habilitación de herramientas nativas de detección de amenazas en AWS, Azure, GCP y OCI.</p>
+        <p>Mi enfoque combina la visión estratégica con la ejecución técnica: desde la detección de recursos expuestos a Internet hasta la automatización de respuestas con XSOAR, pasando por la integración con QRadar y el alineamiento con frameworks como NIST, CIS y MITRE ATT&CK.</p>
+        <p>Facilitador de workshops en ciberseguridad, ganador de CTF y participante activo en hackathons de IA aplicada a seguridad. Creo firmemente que compartir conocimiento acelera el crecimiento de toda la comunidad.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <div class="icon">&#9729;</div>
+          <h4>Multi-Cloud Security</h4>
+          <p>AWS GuardDuty, Azure Defender, GCP Security Command Center, OCI Threat Intelligence — integrados y operativos.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">&#9881;</div>
+          <h4>Automatización</h4>
+          <p>XSOAR, Ansible Tower, Puppet — reduciendo intervención manual y acelerando la respuesta a incidentes.</p>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">&#128187;</div>
+          <h4>IA + Seguridad Ofensiva</h4>
+          <p>Setup de CTF con agentes IA, resolución de challenges con Claude Code, y proyectos como VigIA (agente IA fintech).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">Experiencia</div>
+    <h2 class="section-title">Trayectoria profesional</h2>
+    <div class="timeline">
+
+      <div class="timeline-item current">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-role">Cybersecurity Expert</div>
+            <div class="timeline-company">Banco de Chile</div>
+          </div>
+          <div class="timeline-period">ABR 2022 — Presente</div>
+        </div>
+        <p class="timeline-desc">Líder en transformación digital y operaciones multicloud de ciberseguridad. Implementación de CNAPP con Prisma Cloud, habilitación de herramientas nativas de detección de amenazas (GuardDuty, Defender for Cloud, Security Command Center, Threat Intelligence OCI), integración con QRadar, y creación del modelo operativo para gestión de alertas. Detección y gestión de recursos expuestos a Internet.</p>
+        <div class="timeline-tags">
+          <span class="tag">Prisma Cloud</span><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">GCP</span><span class="tag">OCI</span><span class="tag">QRadar</span><span class="tag">XSOAR</span><span class="tag">Panorama</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-role">IT Services Consultant</div>
+            <div class="timeline-company">Entel &rarr; Banco de Chile</div>
+          </div>
+          <div class="timeline-period">ENE 2017 — ABR 2022 · 5 años</div>
+        </div>
+        <p class="timeline-desc">Soporte N3 para plataformas Unix (AIX, HP-UX, Solaris, Linux) del Banco de Chile. Monitoreo en tiempo real de +1500 servidores y 8000 servicios. Implementación de Docker, hardening con Ansible y Puppet, automatización con Ansible Tower.</p>
+        <div class="timeline-tags">
+          <span class="tag">Unix</span><span class="tag">Docker</span><span class="tag">Ansible</span><span class="tag">Puppet</span><span class="tag">1500+ servers</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-role">Especialista Multiplataforma</div>
+            <div class="timeline-company">Compass Consulting &rarr; Entel</div>
+          </div>
+          <div class="timeline-period">DIC 2015 — ENE 2017 · 1 año</div>
+        </div>
+        <p class="timeline-desc">Soporte integral de plataformas Unix, gestión de almacenamiento empresarial (3PAR, V7000), administración de redes SAN (Cisco, Brocade) y soluciones de respaldo (DataProtector).</p>
+        <div class="timeline-tags">
+          <span class="tag">HP-UX</span><span class="tag">Solaris</span><span class="tag">AIX</span><span class="tag">SAN</span><span class="tag">3PAR</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-header">
+          <div>
+            <div class="timeline-role">Especialista de Storage</div>
+            <div class="timeline-company">Movilnet</div>
+          </div>
+          <div class="timeline-period">NOV 2012 — MAY 2015 · 2 años 7 meses</div>
+        </div>
+        <p class="timeline-desc">Administración de plataforma de almacenamiento y respaldo. Implementación de monitoreo centralizado, sistema de respaldo Bacula, automatización con Shell Scripting. Gestión de EMC Clariion, Symmetrix, VMAX 20K, HP 3PAR, Huawei S12K.</p>
+        <div class="timeline-tags">
+          <span class="tag">EMC</span><span class="tag">VMAX</span><span class="tag">Bacula</span><span class="tag">Huawei</span><span class="tag">Shell Script</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">Skills</div>
+    <h2 class="section-title">Stack técnico</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Cloud Security</h4>
+        <div class="skill-list">
+          <span class="skill-item">Prisma Cloud (CNAPP)</span>
+          <span class="skill-item">AWS GuardDuty</span>
+          <span class="skill-item">Azure Defender</span>
+          <span class="skill-item">GCP SCC</span>
+          <span class="skill-item">OCI Threat Intel</span>
+          <span class="skill-item">Tenable</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>SIEM & Automation</h4>
+        <div class="skill-list">
+          <span class="skill-item">QRadar</span>
+          <span class="skill-item">XSOAR</span>
+          <span class="skill-item">Ansible Tower</span>
+          <span class="skill-item">Puppet</span>
+          <span class="skill-item">Panorama (Palo Alto)</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Plataformas & DevOps</h4>
+        <div class="skill-list">
+          <span class="skill-item">Linux</span>
+          <span class="skill-item">AIX</span>
+          <span class="skill-item">HP-UX</span>
+          <span class="skill-item">Solaris</span>
+          <span class="skill-item">Docker</span>
+          <span class="skill-item">Python</span>
+          <span class="skill-item">Shell Scripting</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Frameworks & Standards</h4>
+        <div class="skill-list">
+          <span class="skill-item">NIST</span>
+          <span class="skill-item">CIS</span>
+          <span class="skill-item">MITRE ATT&CK</span>
+          <span class="skill-item">ITIL v3</span>
+          <span class="skill-item">ISMv3</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>IA & Seguridad Ofensiva</h4>
+        <div class="skill-list">
+          <span class="skill-item">Claude Code</span>
+          <span class="skill-item">Agentes IA</span>
+          <span class="skill-item">LangChain</span>
+          <span class="skill-item">MCP</span>
+          <span class="skill-item">Kali Linux</span>
+          <span class="skill-item">CTF</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Liderazgo</h4>
+        <div class="skill-list">
+          <span class="skill-item">Team Leadership</span>
+          <span class="skill-item">Modelo Operativo</span>
+          <span class="skill-item">Workshops</span>
+          <span class="skill-item">Mentoría</span>
+          <span class="skill-item">Comunicación técnica</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="highlights">
+  <div class="section-inner">
+    <div class="section-label">Logros recientes</div>
+    <h2 class="section-title">Lo que me mueve</h2>
+    <div class="highlights-grid">
+      <div class="highlight-big">
+        <div class="badge" style="background:rgba(0,201,167,.15);color:var(--green)">CTF 2026</div>
+        <h3>1er lugar en CTF</h3>
+        <p>Equipo de 6 personas con el setup más eficiente: Kali + Claude Code + 747 skills + 55 agentes. 19 challenges de forensic resueltos en 20 minutos. Ganamos por velocidad.</p>
+      </div>
+      <div class="highlight-big">
+        <div class="badge" style="background:rgba(255,107,43,.15);color:var(--orange)">IMPACT LAB</div>
+        <h3>VigIA — Agente IA Fintech</h3>
+        <p>48h hackathon en BenditaIA / FintechForum. Creamos VigIA: agente IA que evalúa instituciones financieras en ciberseguridad, productos y reputación con víctimas de fraude. Demo funcional con agentes operativos.</p>
+      </div>
+      <div class="highlight-big">
+        <div class="badge" style="background:rgba(165,94,234,.15);color:var(--purple)">PRESENTACION</div>
+        <h3>Workshop: IA + Seguridad Ofensiva</h3>
+        <p>"Esto ya no se trata de memorizar la herramienta. Se trata de colaborar con la IA como habilitante, guiar su razonamiento y convertir rápido su salida en acción."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Contacto</div>
+    <h2 class="section-title">Hablemos</h2>
+    <div class="contact-box">
+      <h3>Siempre abierto a colaborar</h3>
+      <p>Proyectos de seguridad, workshops, consultorías, CTFs o conversaciones sobre el futuro de la ciberseguridad con IA.</p>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/alriverarojas/" target="_blank" class="contact-link">&#128279; LinkedIn</a>
+        <a href="https://github.com/alrivera86" target="_blank" class="contact-link">&#128187; GitHub</a>
+        <a href="mailto:iacompartida20@gmail.com" class="contact-link">&#9993; Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Alberto Rivera &mdash; Santiago, Chile &mdash; Cybersecurity Expert</p>
+</footer>
+
+</body>
+</html>
